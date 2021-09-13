@@ -1,4 +1,3 @@
-import { RecoilRoot } from 'recoil'
 import { createClient, Provider } from 'urql'
 
 const client = createClient({
@@ -8,9 +7,7 @@ const client = createClient({
 const App = ({ Component, pageProps }) => {
   return (
     <Provider value={client}>
-      <RecoilRoot>
-        <Component {...pageProps} />
-      </RecoilRoot>
+      <Component {...pageProps} />
     </Provider>
   )
 }
