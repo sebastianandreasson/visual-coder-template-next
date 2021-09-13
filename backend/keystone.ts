@@ -14,14 +14,12 @@ if (!sessionSecret) {
   }
 }
 
-let sessionMaxAge = 60 * 60 * 24 * 30
-
 export default config({
   server: {
     cors: {
       origin: '*',
     },
-    port: 3000,
+    port: 4000,
   },
   db: {
     adapter: 'prisma_sqlite',
