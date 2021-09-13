@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { createSchema } from '@keystone-next/keystone/schema'
+import { createSchema } from '@keystone-next/keystone'
 
 export const lists = () => {
   let schemaObjects = {}

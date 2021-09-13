@@ -1,5 +1,5 @@
-import { list } from '@keystone-next/keystone/schema'
-import { text, relationship, password } from '@keystone-next/fields'
+import { list } from '@keystone-next/keystone'
+import { text, relationship, password } from '@keystone-next/keystone/fields'
 
 module.exports = {
   User: list({
@@ -10,7 +10,7 @@ module.exports = {
     },
     fields: {
       name: text({ isRequired: true }),
-      email: text({ isRequired: true, isUnique: true }),
+      email: text({ isRequired: true, isIndexed: 'unique' }),
       password: password(),
       posts: relationship({ ref: 'Post.author', many: true }),
     },

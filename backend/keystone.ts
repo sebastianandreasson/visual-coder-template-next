@@ -1,8 +1,4 @@
-import { config } from '@keystone-next/keystone/schema'
-import {
-  statelessSessions,
-  withItemData,
-} from '@keystone-next/keystone/session'
+import { config } from '@keystone-next/keystone'
 
 import { lists } from './lib/schema'
 
@@ -38,11 +34,4 @@ export default config({
     generateNextGraphqlAPI: true,
   },
   lists: lists(),
-  session: withItemData(
-    statelessSessions({
-      maxAge: sessionMaxAge,
-      secret: sessionSecret,
-    }),
-    { User: 'name' }
-  ),
 })
